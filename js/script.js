@@ -172,15 +172,24 @@ const app = new Vue({
     methods: {
         openChat(index) {
             this.activeIndex = index
-        }
+        },
+        sendMessage() {
+            const newmessage = {
+                date: '27/04/2020 16:20:00',
+                message: this.message,
+                status: 'sent',
+            }
+            this.contacts[this.activeIndex].messages.push(newmessage)
+
+            const answerMessage = {
+                date: '27/04/2020 16:20:00',
+                message: 'ok',
+                status: 'received',
+            }
+            setTimeout(() => {
+                this.contacts[this.activeIndex].messages.push(answerMessage)
+            }, 1000);
+        },
     },
-    sendMessage() {
-        const newmessage = {
-            date: '27/04/2020 16:20:00',
-            message: this.message,
-            status: 'sent',
-        }
-        this.contacts[this.activeIndex].messages.push(newmessage)
-        
-    }
+
 })
