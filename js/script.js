@@ -169,6 +169,8 @@ const app = new Vue({
 
     },
     methods: {
-openChat
+openChat(index){
+    this.activeIndex = index
+}
     },
 })
