@@ -126,7 +126,9 @@ nav {
   overflow-y: scroll;
 } */
 aside {
-  overflow-y: scroll
+  overflow-y: scroll;
+  height: calc(100% - 155px);
+  
 }
 /* chat card */
 .chat img {
