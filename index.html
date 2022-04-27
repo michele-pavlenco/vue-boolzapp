@@ -51,11 +51,11 @@
                     </nav>
                     <!-- aside -->
                     <aside>
-                        <div class="chat active">
-                            <img src="./img/avatar_1.jpg" alt="immagine del profilo">
+                        <div v-for="(contact, index) in contacts " class="chat" :class="{'active' : activeIndex === index}" @click="openChat(index)">
+                            <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="immagine del profilo">
                             <div class="chat-text">
-                                <p class="nome">Michele</p>
-                                <p class="ultimo-messaggio">Ultimo messaggio inviato </p>
+                                <p class="nome">{{contact.name}}</p>
+                               <p class="ultimo-messaggio">Ultimo messaggio inviato </p> <!-- {{contacts.messages.message}} -->
                                 <p class="ora-ultimo-messaggio">12.00</p>
                             </div>
                         </div>
@@ -133,11 +133,13 @@
                     </div>
                     <!-- chat -->
                     <div class="background-chat">
-                        <div class="messaggio sent"> hai postrato a spassp il cane?
-                            <div class="messaggio-ora">12.50
+                        <div>
+                            <div v-for="(item, index) in contacts.[activeIndex].messages " class="messaggio" :class="contacts.messages.status">
+                                {{contacts.messages.message}}
+                                <div class="messaggio-ora">{{item.date}}
+                                </div>
                             </div>
                         </div>
-
                     </div>
                     <!-- scrivi messaggi -->
                     <div class="scrivi-messaggio">

@@ -142,6 +142,9 @@ aside {
   display: flex;
   border-bottom: 1px solid #ece5dd;
 }
+.chat:hover{
+  background-color:#ece5dd ;
+}
 .chat-text {
   width: 100%;
   position: relative;

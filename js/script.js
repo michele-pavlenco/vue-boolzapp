@@ -164,12 +164,11 @@ const app = new Vue({
                 ],
             }
         ],
-
-        da
+        activeIndex: 0,
         
 
     },
     methods: {
-
+openChat
     },
 })
