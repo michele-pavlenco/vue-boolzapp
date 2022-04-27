@@ -165,12 +165,22 @@ const app = new Vue({
             }
         ],
         activeIndex: 0,
-        
+        message: "",
+
 
     },
     methods: {
-openChat(index){
-    this.activeIndex = index
-}
+        openChat(index) {
+            this.activeIndex = index
+        }
     },
+    sendMessage() {
+        const newmessage = {
+            date: '27/04/2020 16:20:00',
+            message: this.message,
+            status: 'sent',
+        }
+        this.contacts[this.activeIndex].messages.push(newmessage)
+        
+    }
 })

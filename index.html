@@ -151,7 +151,7 @@
                             <i class="fa-solid fa-face-smile"></i>
                         </div>
 
-                            <input type="text">
+                            <input @keyup.enter="sendMessage" v-model="message" type="text">
 
 
                         <div class="audio">
