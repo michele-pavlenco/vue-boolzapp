@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <title>Whatsapp</title>
 </head>
 
@@ -59,9 +60,9 @@
                             <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="immagine del profilo">
                             <div class="chat-text ">
                                 <p class="nome">{{contact.name}}</p>
-                                <p class="ultimo-messaggio">Ultimo messaggio inviato </p>
+                                 <p class="ultimo-messaggio">{{contacts[index].messages[contacts[index].messages.length-1].message}}</p> 
                                 <!-- {{contacts.messages.message}} -->
-                                <p class="ora-ultimo-messaggio">12.00</p>
+                                <p class="ora-ultimo-messaggio">{{contacts[index].messages[contacts[index].messages.length-1].date}}</p>
                             </div>
                         </div>
                         <!-- <div class="chat ">
@@ -126,7 +127,7 @@
                                     <p>{{contacts[activeIndex].name}}</p>
                                 </li>
                                 <li>
-                                    <p class="ultimo-accesso">Ultimo accesso oggi alle 12.00</p>
+                                    <p class="ultimo-accesso">Ultimo accesso {{contacts[activeIndex].messages[contacts[activeIndex].messages.length-1].date}} </p>
                                 </li>
                             </ul>
                         </div>
@@ -145,31 +146,23 @@
                                 {{item.message}}
                                 <div class="messaggio-ora">{{item.date}}
                                 </div>
+                                <div class="messaggio-opzioni">
+                                    <i class="fa-solid fa-chevron-down"></i></div>
                             </div>
                         </div>
                     </div>
                     <!-- scrivi messaggi -->
                     <div class="scrivi-messaggio">
-
                         <div class="emoji">
                             <i class="fa-solid fa-face-smile"></i>
                         </div>
-
                         <input @keyup.enter="sendMessage()" v-model="message" type="text" placeholder="Invia Messaggio">
-
-
                         <div class="audio">
                             <i class="fa-solid fa-microphone"></i>
                         </div>
 
                     </div>
                 </main>
-
-
-
-
-
-
             </div>
         </div>
 

@@ -3,12 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root{
+  --grey-1: #eeeeee;
+  --grey-2: #dddddd;
+  --grey-3: #cccccc;
+  --grey-4: #bbbbbb;
+}
+
+
 body{
   font-family: 'lato', sans-serif
 }
 .container {
   height: 100vh;
-  background-color: rgb(212, 212, 212);
+  background-color:var(--grey-4);
+  min-width: 1100px;
+  overflow-x: scroll;
 }
 .greenbackground {
   height: 20vh;
@@ -22,7 +32,7 @@ body{
   float: left;
   overflow: hidden;
   width: 35%;
-  min-width: 300px;
+  min-width: 250px;
 }
 .page {
   top: 30px;
@@ -32,17 +42,18 @@ body{
   position: absolute;
   font-size: 15px;
   overflow: hidden;
+  min-width: 900px;
 }
 /* nav */
 nav {
 
   height: 155px;
-  background-color: #f3efeb94;
+  background-color: var(--grey-1);
   display: flex;
   flex-flow: column;
   align-items: center;
 
-  min-width: 300px;
+  min-width: 250px;
 }
 /* Area utente  */
 .opzioni-utente {
@@ -105,7 +116,7 @@ nav {
 }
 .serch {
   width: 20%;
-  border: 1px solid rgb(228, 228, 228);
+  border: 1px solid var(--grey-2);
   text-align: center;
   height: 25px;
   cursor: pointer;
@@ -117,18 +128,19 @@ nav {
 .serch-bar input {
   width: 80%;
   height: 25px;
-  border: 1px solid #ece5dd;
+  border: 1px solid var(--grey-2);
+  border-left: 0px;
 }
 /* aside */
 .active {
-  background-color: #ece5dd;
+  background-color: var(--grey-2);
 }
 aside {
   overflow-y: scroll;
   height: calc(100% - 155px);
   position: absolute;
   width: 35%;
-  min-width: 300px;
+  min-width: 250px;
 }
 /* chat card */
 .chat img {
@@ -140,10 +152,10 @@ aside {
   width: 100%;
   height: 80px;
   display: flex;
-  border-bottom: 1px solid #ece5dd;
+  border-bottom: 1px solid var(--grey-2);
 }
 .chat:hover {
-  background-color: #ece5dd;
+  background-color: var(--grey-1);
 }
 .chat-text {
   width: 100%;
@@ -151,13 +163,13 @@ aside {
 }
 .nome {
   margin: 10px 10px 5px 10px;
-  width: 80%;
+  width: 50%;
 }
 .ultimo-messaggio {
   margin-left: 10px;
-  color: lightgray;
+  color: var(--grey-4);
   font-size: 13px;
-  width: 80%;
+  width: 50%;
 }
 .ora-ultimo-messaggio {
   position: absolute;
@@ -165,7 +177,7 @@ aside {
   right: 10px;
   width: 10%;
   font-size: 10px;
-  color: lightgray;
+  color: var(--grey-4);
 }
 /* main */
 main {
@@ -178,8 +190,8 @@ main {
 /* main nav */
 .main-nav {
   height: 60px;
-  background-color: #f3efeb94;
-  border-left: 1px solid rgb(212, 212, 212);
+  background-color: var(--grey-1);
+  border-left: 1px solid var(--grey-3);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -198,11 +210,15 @@ main {
 }
 .main-nav .ultimo-accesso {
   font-size: 13px;
-  color: rgb(163, 163, 163);
+  color: var(--grey-4);
 }
+ .main-nav-options{
+} 
 .main-nav-options i {
   margin-right: 10px;
-  color: rgb(212, 212, 212);
+  color: var(--grey-4);
+  margin-right: 20px;
+  cursor: pointer;
 }
 /* chat */
 .background-chat {
@@ -214,7 +230,7 @@ main {
 }
 .messaggio {
   background-color: white;
-  width: 25%;
+  width: 30%;
   border-radius: 10px;
   font-size: 14px;
   margin: 5px 10px;
@@ -226,6 +242,7 @@ main {
   float: right;
   clear: both;
   border-top-right-radius: 0px;
+  text-align: left;
 }
 .received {
   background-color: white;
@@ -241,6 +258,18 @@ main {
   color: rgb(212, 212, 212);
   position: absolute;
 }
+.messaggio-opzioni i{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  visibility: hidden;
+}
+.messaggio-opzioni:hover + i{
+visibility: visible;
+}
+
+
 /* scrivi messaggi  */
 .scrivi-messaggio {
   display: flex;
@@ -248,12 +277,12 @@ main {
   justify-content: space-around;
   width: 100%;
   height: 60px;
-  background-color: rgb(235, 233, 233);
+  background-color: var(--grey-1);
 }
 .scrivi-messaggio input {
   width: 80%;
   height: 30px;
-  border: 1px solid rgb(235, 233, 233);
+  border: 1px solid var(--grey-1);
   border-radius: 5px;
   
 }

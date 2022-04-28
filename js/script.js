@@ -141,7 +141,7 @@ const app = new Vue({
                     }
                 ],
             },
-            {
+ chat           {
                 name: 'Davide',
                 avatar: '_8',
                 visible: true,
@@ -166,7 +166,8 @@ const app = new Vue({
         ],
         activeIndex: 0,
         message: "",
-        serchChat: ""
+        serchChat: "",
+    //lastMessage: contacts[activeIndex].messages.date.pop(),
 
 
     },
@@ -176,14 +177,15 @@ const app = new Vue({
         },
         sendMessage() {
             const newmessage = {
-                date: '27/04/2020 16:20:00',
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 message: this.message,
                 status: 'sent',
             }
             this.contacts[this.activeIndex].messages.push(newmessage)
+            this.message = ""
 
             const answerMessage = {
-                date: '27/04/2020 16:20:00',
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 message: 'ok',
                 status: 'received',
             }
