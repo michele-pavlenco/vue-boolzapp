@@ -163,19 +163,17 @@ aside {
 }
 .nome {
   margin: 10px 10px 5px 10px;
-  width: 50%;
 }
 .ultimo-messaggio {
   margin-left: 10px;
   color: var(--grey-4);
   font-size: 13px;
-  width: 50%;
 }
 .ora-ultimo-messaggio {
   position: absolute;
-  top: 5px;
-  right: 10px;
-  width: 10%;
+  top: 0px;
+  right: 0px;
+  padding: 5px;
   font-size: 10px;
   color: var(--grey-4);
 }
@@ -265,11 +263,9 @@ main {
   cursor: pointer;
   visibility: hidden;
 }
-.messaggio-opzioni:hover + i{
+.messaggio-opzioni:hover i{
 visibility: visible;
 }
-
-
 /* scrivi messaggi  */
 .scrivi-messaggio {
   display: flex;

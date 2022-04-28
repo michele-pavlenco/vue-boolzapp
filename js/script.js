@@ -141,7 +141,7 @@ const app = new Vue({
                     }
                 ],
             },
- chat           {
+         {
                 name: 'Davide',
                 avatar: '_8',
                 visible: true,

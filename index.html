@@ -59,7 +59,7 @@
                             :class="{'active' : activeIndex === index}" @click="openChat(index)" v-if="contact.visible">
                             <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="immagine del profilo">
                             <div class="chat-text ">
-                                <p class="nome">{{contact.name}}</p>
+                                <p class="nome ">{{contact.name}}</p>
                                  <p class="ultimo-messaggio">{{contacts[index].messages[contacts[index].messages.length-1].message}}</p> 
                                 <!-- {{contacts.messages.message}} -->
                                 <p class="ora-ultimo-messaggio">{{contacts[index].messages[contacts[index].messages.length-1].date}}</p>
