@@ -166,6 +166,7 @@ const app = new Vue({
         ],
         activeIndex: 0,
         message: "",
+        serchChat: ""
 
 
     },
@@ -190,6 +191,18 @@ const app = new Vue({
                 this.contacts[this.activeIndex].messages.push(answerMessage)
             }, 1000);
         },
+        filterChat() {
+            this.contacts.forEach((contact) => {
+                if (contact.name.toLowerCase().includes(this.serchChat.toLowerCase())) {
+                    contact.visible = true
+
+                } else {
+                    contact.visible = false
+                }
+
+            })
+        }
+
     },
 
 })

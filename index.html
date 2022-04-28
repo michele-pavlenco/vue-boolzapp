@@ -8,6 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Whatsapp</title>
 </head>
 
@@ -46,15 +49,15 @@
                             <div class="serch">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
-                            <input type="text">
+                            <input v-model="serchChat" @keyup="filterChat" placeholder="Cerca chat" type="text">
                         </div>
                     </nav>
                     <!-- aside -->
                     <aside>
                         <div v-for="(contact, index) in contacts " class="chat"
-                            :class="{'active' : activeIndex === index}" @click="openChat(index)">
+                            :class="{'active' : activeIndex === index}" @click="openChat(index)" v-if="contact.visible">
                             <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="immagine del profilo">
-                            <div class="chat-text">
+                            <div class="chat-text ">
                                 <p class="nome">{{contact.name}}</p>
                                 <p class="ultimo-messaggio">Ultimo messaggio inviato </p>
                                 <!-- {{contacts.messages.message}} -->
@@ -116,7 +119,8 @@
                     <!-- main nav -->
                     <div class="main-nav">
                         <div class="main-nav-profilo">
-                            <img :src="'./img/avatar' + contacts[activeIndex].avatar + '.jpg'" alt="immagine del profilo">
+                            <img :src="'./img/avatar' + contacts[activeIndex].avatar + '.jpg'"
+                                alt="immagine del profilo">
                             <ul>
                                 <li>
                                     <p>{{contacts[activeIndex].name}}</p>
@@ -151,7 +155,7 @@
                             <i class="fa-solid fa-face-smile"></i>
                         </div>
 
-                            <input @keyup.enter="sendMessage()" v-model="message" type="text">
+                        <input @keyup.enter="sendMessage()" v-model="message" type="text" placeholder="Invia Messaggio">
 
 
                         <div class="audio">

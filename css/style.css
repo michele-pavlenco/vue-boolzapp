@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  font-family: 'lato', sans-serif
+}
 .container {
   height: 100vh;
   background-color: rgb(212, 212, 212);
@@ -19,6 +22,7 @@
   float: left;
   overflow: hidden;
   width: 35%;
+  min-width: 300px;
 }
 .page {
   top: 30px;
@@ -31,13 +35,14 @@
 }
 /* nav */
 nav {
-  top: 0px;
+
   height: 155px;
   background-color: #f3efeb94;
   display: flex;
   flex-flow: column;
   align-items: center;
-  position: static;
+
+  min-width: 300px;
 }
 /* Area utente  */
 .opzioni-utente {
@@ -122,7 +127,8 @@ aside {
   overflow-y: scroll;
   height: calc(100% - 155px);
   position: absolute;
-  width: 100%;
+  width: 35%;
+  min-width: 300px;
 }
 /* chat card */
 .chat img {
@@ -167,6 +173,7 @@ main {
   height: 100%;
   width: 65%;
   position: relative;
+  min-width: 500px;
 }
 /* main nav */
 .main-nav {
