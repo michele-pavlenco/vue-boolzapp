@@ -1,0 +1,66 @@
+@media screen and (max-width: 768px) {
+    .notifiche {
+        display: none;
+      }
+      .left {
+        width: 10%;
+      }
+      nav {
+        height: 85px;
+      }
+      .nome-utente {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+         width: 100%; 
+      }
+      .impostazioni-utente  {
+          display: none;
+      }
+      .serch-bar {
+        margin: 0px;
+        width: 100%;
+      }
+      .serch-bar .serch {
+          width: 30px;
+      }
+      aside {
+        height: calc(100% - 85px);
+        width: 10%;
+      }
+      .chat img {
+        height: 50px;
+        border-radius: 50%;
+        /* width: 50px; */
+        margin-top: 0px;
+      }
+      .chat {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        
+      }
+      .nome {
+        margin-top: -10px;
+        text-align: center;
+        font-size: 12px;
+
+      }
+      .ultimo-messaggio {
+          display: none;
+      }
+      .ora-ultimo-messaggio {
+       display: none;
+      }
+      
+
+
+
+
+
+
+      main {
+        width: 90%;
+      }
+  }
